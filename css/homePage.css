@@ -244,7 +244,7 @@ button[disabled]{
   margin-left: -300px;
   margin: 0 auto;
   padding: 10px;
-	background-image: url("/images/bubbles04.jpg");
+	background-image: url("../images/bubbles04.jpg");
 }
 
 #boxAbout{
@@ -262,7 +262,7 @@ button[disabled]{
   margin-left: -300px;
   margin: 0 auto;
   padding: 10px;
-  background-image: url("/images/grass01.jpg");
+  background-image: url("../images/grass01.jpg");
 
 }
 
@@ -281,7 +281,7 @@ button[disabled]{
   margin: 0 auto;
   padding: 5px;
   line-height: 20px;
-  background-image: url("/images/sky.gif");
+  background-image: url("../images/sky.gif");
 
 }
 
@@ -299,7 +299,7 @@ button[disabled]{
   margin: 0 auto;
   padding: 5px;
   line-height: 20px;
-	background-image:url("/images/yellow.jpg");
+	background-image:url("../images/yellow.jpg");
 }
 
 #via{
@@ -617,7 +617,7 @@ input:checked + .slider:before {
   z-index: -1;
   margin: auto;
   padding: 10px;
-  background-image: url("/images/party.jpeg")  ;
+  background-image: url("../images/party.jpeg")  ;
   opacity: 0.5;
 
   -webkit-animation-name: fadeIn;
