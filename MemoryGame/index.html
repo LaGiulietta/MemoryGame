@@ -1,0 +1,140 @@
+<!-- BUG NOTI 13/01/18
+
+- A volte non carica il giusto font nel canvas
+- tempi delle animazioni
+
+***** ATTENZIONE: Ho cambiato la parola Università in Universita' ***** Ricordarselo per i Backup precedenti!
+-->
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Memory</title>
+		<!--carico i file CSS e Javascript-->
+		<link href="css/homePage.css" rel="stylesheet" type="text/css">	
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+	
+		<script type="text/javascript" src="js/fillCanvas.js"> 
+		</script>
+
+		<script type="text/javascript" src="js/buttons.js">
+		</script>
+
+		<script type="text/javascript" src="js/windowUtils.js">
+		</script>
+
+		<script type="text/javascript" src="js/callbacks.js">
+		</script>
+
+		<script type="text/javascript" src="js/createCards.js">
+		</script>
+			
+	</head>
+
+	<body class="fullScreen" >
+		<div id="firstPage">
+			 	 
+		<canvas id="canvas"></canvas>
+		
+		<div class="wrapper" id="wr" >
+		   <button type="button" id="sb" style="visibility: hidden;" value="Start!" onclick="myStartFunction()"> Start! </button>
+		   
+		</div>	
+		
+		<div class="options" >
+		   <button type="button" style="visibility: hidden;" id="help" value="How to Play" onclick="myHelpFunction()"> ? </button>
+		   <button type="button" style="visibility: hidden;" id="about" value="About" onclick="myAboutFunction()"> i </button>
+		</div>
+			
+		</div>
+
+
+
+		<div id="boxAbout" style="display: none;">
+			<span id='close' readonly="readonly">X</span>
+			<br>Questo gioco &egrave; stato proposto come progetto finale per l'esame <br>di<br>Programmazione di Interfacce. 
+			<br><br> Sviluppatrice: Giulia Nencini, matricola 479457.<br>
+			Professore: Antonio Cisternino.<br><br><br><i>Versione Alfa, rilasciata a marzo 2018.</i>
+			
+		</div>
+
+
+		<div id="boxHelp" style="display: none;">
+			<span id='close2' readonly="readonly">X</span>
+		
+			<p style="text-align: center;"><br>Il Memory &egrave; un popolare gioco di carte che richiede concentrazione<br> e memoria. <br>Vi &egrave; un'unica regola: i giocatori devono accoppiare le carte che presentano lo stesso disegno.</p>
+			L'utente pu&ograve; scegliere:<br><ul class="list"><li> diversi gradi di difficolt&agrave; <ul class="list">* Facile(3x4) &emsp; &ensp; ** Medio(4x5) &emsp; &nbsp;  &emsp;    *** Difficile(5x6)</ul></li>
+
+			<li>alcuni mazzi con diversi temi<ul class="list">° Animali &emsp; ° Numeri random tra 1 e 30 &emsp; ° Frutta e verdura</ul>	
+		</div>
+
+		
+		<div id="boxOptions" style="display: none; color: red" >
+			<span id='close3' readonly="readonly" >X</span>
+			<br><h2 style="color:	#1e90ff">Impostazioni </h2>
+			
+			<h4 style="color:#00bfff">Difficolt&agrave;:</h4>
+			<div>
+				<label class="container" title="dimensione 3 x 4, 6 coppie" >Facile
+				  	<input type="radio"  name="radio" id="easy">
+				  	<span class="checkmark"></span>
+				</label>
+			
+				<label class="container" title="dimensione 4 x 5, 10 coppie">Media
+			  		<input type="radio" checked="checked" name="radio" id="medium">
+			  		<span class="checkmark"></span>
+				</label>
+				<label class="container" title="dimensione 5 x 6, 15 coppie">Difficile
+			  		<input type="radio" name="radio" id="hard">
+			  		<span class="checkmark"></span>
+				</label>
+			</div>
+			<br>
+			<h4 style="color: #00bfff">Mazzo:</h4>
+			<div>
+				<label class="container2">Animali
+			  		<input type="radio" checked="checked" name="radio2" id="animals">
+			  		<span class="checkmark2"></span>
+				</label>
+				<label class="container2" >Numeri
+			  		<input type="radio" name="radio2" id="numbers">
+			  		<span class="checkmark2"></span>
+				</label>
+				<label class="container2">Frutta e verdura
+			  		<input type="radio" name="radio2" id="fruits">
+			  		<span class="checkmark2"></span>
+				</label>
+			</div>
+			<br><br><br><br><br>
+			<div>
+				<button type="button" id="sb2" value="Start!" style="animation:none; "
+					onclick="myStartAfterSettingsFunction()"><span>Start </span> 
+				</button>
+			</div>	
+		</div>
+
+		<div id="boxGame" style="display: none;">
+			<div id='close4' readonly="readonly">X</div>
+			<br><br>
+			<div id="table" style="border:2px dashed black; width: 1097px; height: 520px; text-align: center;"></div>
+		
+		</div>
+		<!-- <div id="via" style="display: none;"> Lets's start! </div> -->
+		<div id="ciao"  style="display: none;">
+			<div id="fine" >
+				<img id='restart' readonly="readonly" src="file:///C://Users/Giulia/Universita'/IUM/GIULIA%20FINAL%202018/images/reload - Copia.png" alt="relaod"> 
+				<span id='close5' readonly="readonly">X</span>
+			</div>
+			<br>
+			<div id="text" class="typewriter" > Complimenti!</div> 
+		</div>
+		<div id="setStars" class="stars" >
+			<span id="star1" style="display: none;">&star;</span>
+			<span id="star2" style="display: none;">&star;</span>
+			<span id="star3" style="display: none;">&star;</span>
+		</div>
+		<div id="time" style="display: none;"> Hai completato il memory in: 
+		</div>
+	
+	</body>
+</html>
