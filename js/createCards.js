@@ -1,4 +1,4 @@
-var background="C:/Users/Giulia/Universita'/IUM/GIULIA FINAL 2018/images/rainbow01.jpg";
+var background="images/rainbow01.jpg";
 
 function my_3x4(){
 	var box=document.getElementById('table');

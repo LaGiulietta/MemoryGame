@@ -107,20 +107,20 @@ function myStartAfterSettingsFunction() {
 function viewSetCards(){
 	if (document.getElementById('animals').checked){
 		deck=0;
-		var basePath="C:/Users/Giulia/Universita'/IUM/GIULIA FINAL 2018/images/Animals/";
+		var basePath="images/Animals/";
 		var animalsImages = ['Balm-cricket.png', 'Bee.png', 'Bird.png','Brown-bear.png', 'Butterfly.png', 'Cat.png','Cobra.png', 'Cock.png', 'Colibrì.png','Crocodile.png', 'Dog01.png', 'Dog02.png','Elephant.png', 'Giraffe.png', 'Globefish.png','Goat.png','Grapus.png', 'Hamster.png','Hippo.png', 'Koala.png', 'Lion.png', 'LittleBird.png','LittleFish.png', 'LittleRedFish.png', 'Ox.png', 'Panda.png', 'Parrot.png','Pig.png','Polar-bear.png','Rhinoceros.png','Shark.png', 'Sheep.png', 'Tiger.png', 'TigerCub.png','Turtle.png', 'Whale.png' ];
 
 		set=animalsImages;
 	}
 	else if (document.getElementById('numbers').checked){
 		deck=1;
-		var basePath="C:/Users/Giulia/Universita'/IUM/GIULIA FINAL 2018/images/Numbers/";
+		var basePath="images/Numbers/";
 		var numbersImages=['01.png', '02.png', '03.png', '04.png', '05.png', '06.png', '07.png','08.png', '09.png', '10.png', '11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '20.png', '21.png', '22.png', '23.png', '24.png', '25.png', '26.png', '27.png', '28.png', '29.png', '30.png'];
 
 		set=numbersImages;
 	} else if (document.getElementById('fruits').checked){
 		deck=2;
-		var basePath="C:/Users/Giulia/Universita'/IUM/GIULIA FINAL 2018/images/Fruits/";
+		var basePath="images/Fruits/";
 		var fruitsImages=['Apple.png', 'Apricot.png', 'Banana.png', 'Carrot.png', 'Cucumber.png', 'Eggplant.png', 'Onion.png','Orange.png', 'Pear.png', 'Pepper.png', 'Plum.png', 'Potato.png', 'Salad.png', 'Strawberry.png', 'Tomato.png'];
 
 		set=fruitsImages;
@@ -157,7 +157,7 @@ function addImages(numElements, basePath){
 /// GAME FUNCTIONS
 
 var array=[];
-var background="C:/Users/Giulia/Universita'/IUM/GIULIA FINAL 2018/images/rainbow01.jpg";
+var background="images/rainbow01.jpg";
 var diff=-1;
 var deck=-1;
 
