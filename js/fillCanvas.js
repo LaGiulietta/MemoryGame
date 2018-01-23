@@ -17,7 +17,7 @@ function fillCanvas(){
 	//Scrittura nel canvas
 	img.onload= function(){
 	  drawText(); 
-	}
+	};
 
 
 	// Disegno della scritta nel canvas

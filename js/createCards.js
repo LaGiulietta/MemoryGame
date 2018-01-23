@@ -7,7 +7,6 @@ function my_3x4(){
 	console.log(w);
 	console.log(h);
 	
-	var wInt = parseInt(document.getElementById('table').style.width);
 	var hInt = parseInt(document.getElementById('table').style.height);
 	var lato = hInt/4 - 5;
 	
@@ -41,7 +40,6 @@ function my_4x5(){
 	console.log(w);
 	console.log(h);
 	
-	var wInt = parseInt(document.getElementById('table').style.width);
 	var hInt = parseInt(document.getElementById('table').style.height);
 	var lato = hInt/5 - 10;
 
@@ -76,7 +74,6 @@ function my_5x6(){
 	console.log(w);
 	console.log(h);
 	
-	var wInt = parseInt(document.getElementById('table').style.width);
 	var hInt = parseInt(document.getElementById('table').style.height);
 	var lato = hInt/6 - 10;
 	

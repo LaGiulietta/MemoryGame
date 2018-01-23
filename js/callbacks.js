@@ -407,9 +407,17 @@ function timeConversion(endTime, startTime) {
 	var ss=startTime.getSeconds();
 	var es=endTime.getSeconds();
     var ds=es-ss;
+    
+    // Caso: secondi finali maggiori dei secondi iniziali
     if (ds<0){
     	dm--;
     	ds=60-(ss-es);
+    }
+
+    // Caso: minuti finali maggiori dei minuti iniziali
+    if (dm<0){
+    	
+    	dm=60-(sm-em);
     }
     console.log("dm:"+dm+"ds:"+ds);
 

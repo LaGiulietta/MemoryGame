@@ -247,6 +247,10 @@ button[disabled]{
 	background-image: url("../images/bubbles04.jpg");
 }
 
+li{
+  margin:0 0 20px 0;    
+}
+
 #boxAbout{
 	width: 610px;
   height: 350px;
@@ -442,6 +446,7 @@ li{
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
+    border:1px solid black;
     font-size: 2em;
 }
 

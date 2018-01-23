@@ -30,7 +30,7 @@ window.onload = function(){
     	};
 
     document.getElementById('close4').onclick = function(){
-        var answer = confirm ("Sei sicuro di voler abbandonare la partita?")
+        var answer = confirm ("Sei sicuro di voler abbandonare la partita?");
         if (answer){
             document.getElementById("boxAbout").style.display="none";
             document.getElementById("boxHelp").style.display="none";
@@ -82,7 +82,7 @@ window.onload = function(){
         document.getElementById("firstPage").style.opacity="1"; 
         clearDiv();
         myStartAfterSettingsFunction();
-    }
+    };
 
     fillCanvas();
 
