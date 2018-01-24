@@ -10,17 +10,12 @@
 .fullScreen {
 	width: 100%;
 	height: 100%;
-	margin-top: 100px;
+	margin-top: 10%;
 	background-image: -ms-radial-gradient(center, ellipse farthest-corner, #00ffff 0%, #297EFF 100%);
-	/* Mozilla Firefox */ 
 	background-image: -moz-radial-gradient(center, ellipse farthest-corner, #00ffff 0%, #297EFF 100%);
-	/* Opera */ 
 	background-image: -o-radial-gradient(center, ellipse farthest-corner, #00ffff 0%, #297EFF 100%);
-	/* Webkit (Safari/Chrome 10) */ 
 	background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, #00ffff), color-stop(100, #297EFF));
-	/* Webkit (Chrome 11+) */ 
 	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #00ffff 0%, #297EFF 100%);
-	/* W3C Markup */ 
 	background-image: radial-gradient(ellipse farthest-corner at center, #00ffff 0%, #297EFF 100%);
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -28,12 +23,9 @@
 }
 
 
-
-
 .wrapper {
     text-align: center;
     position: relative;
-
 }
 
 .options {
@@ -49,7 +41,6 @@
 #help {
 	height:60px;
 	width:60px;
-	margin-right: 20px;
 	font-family: Cookie;
 	color: 	white;
 	cursor: pointer;
@@ -96,14 +87,13 @@
 #about {
 	height:60px;
 	width:60px;
- 	margin-right: 80px;
  	font-family: Cookie;
 	color: white; 
 	cursor: pointer;
 	font-size: 3em;	
 	border: 2px dashed white;
   border-radius: 50%;
-    
+  margin: 20px;
 	background-color: #099417; background-image: -webkit-gradient(linear, left top, left bottom, from(#099417), to(#45FF29));
 	background-image: -webkit-linear-gradient(top, #099417, #45FF29);
  	background-image: -moz-linear-gradient(top, #099417, #45FF29);
@@ -224,7 +214,7 @@ button[disabled]{
 
 @keyframes mymove {
 	0% {opacity: 0;}
-   100% {opacity: 1}
+  100% {opacity: 1}
 }
 
 
@@ -673,8 +663,8 @@ input:checked + .slider:before {
   position: relative;
   font-size:500%;
   color:  #ffd700;
-  margin: auto;
-  right: -885px;
+  bottom: 6%;
+  right: -70%;
  
 }
 
@@ -688,8 +678,8 @@ input:checked + .slider:before {
   line-height: 50px;
   height: 50px;
   width: 800px;
-  bottom: 5px; 
-  right: -520px;  
+  bottom: 5%; 
+  right: -37%;  
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 1s;
