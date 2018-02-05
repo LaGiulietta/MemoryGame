@@ -10,7 +10,6 @@ function fillCanvas(){
 
 	canvas.width = window.innerWidth;
 	canvas.height = 250;
-
 	//Immagine usata per riempire la scritta
 	var img = document.createElement("img");
 	img.src="images/rainbow01.jpg";

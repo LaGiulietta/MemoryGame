@@ -1,5 +1,6 @@
 var set=[];
-		
+var partita=false; // per decidere come gestire la pressione del tasto "Escape"	
+var settaggio=false;
 
 function mostra(idElem){ 
 	idElem.style.display='block'; 
@@ -60,6 +61,8 @@ function myHelpFunction() {
 }
 
 function myStartFunction() {
+	partita=false;
+	settaggio=true;
 	// opacità della homePage
 	var element = document.getElementById('firstPage');
 	element.style.opacity = "0.2";
@@ -80,7 +83,7 @@ function myStartAfterSettingsFunction() {
 	var element2 = document.getElementById('boxOptions');
 	nascondi(boxOptions);
 
-
+	settaggio=false;
 	var id= document.getElementById('sb');
 	stopAnimations(id);
 	disableAllButtonAbove();
@@ -289,7 +292,7 @@ function game(startTime){
 	console.log("---> "+array.toString());
 
 	
-
+	partita=true;
 	for(i=0;i<array.length;i++){
 		var el = document.getElementById(i);
 		numCouple=array.length/2;
@@ -378,6 +381,7 @@ function remove(idSecond, idFirst, startTime){
 		// Calcolo la durata della partita
 		console.log("FINISH");
 		setTimeout(goToEnd, 400, startTime);
+		partita=false;
 	}
 }
 
@@ -524,3 +528,35 @@ function goToStats(out, box){
 	mostraStars();
 
 }
+
+
+function gestisciTasto(){
+	var tasto = window.event.keyCode;
+	if (tasto == 27) {
+		returnToMain();
+	}
+	if (tasto == 13) {
+		console.log("INVIO");
+		if(settaggio) myStartAfterSettingsFunction();
+	}
+}
+
+function returnToMain(){
+	if (partita) {
+			var answer = confirm ("Sei sicuro di voler abbandonare la partita?");
+        	if (answer){
+	            document.getElementById("boxAbout").style.display="none";
+	            document.getElementById("boxHelp").style.display="none";
+	            document.getElementById("boxOptions").style.display="none";
+	            document.getElementById("boxGame").style.display="none";
+	            document.getElementById("firstPage").style.opacity="1";
+	            clearDiv();
+	            enableAllButtonAbove();
+	            partita=false;
+	            return false; 
+	        }
+    	}
+    else console.log("nulla");
+    }
+
+

@@ -600,7 +600,9 @@ input:checked + .slider:before {
 #ciao{
   font-family: Cookie;
   color: black; 
-  font-weight: bold;  
+  font-weight: bold;
+  width: 98%;
+  height: 96%;  
   border: 3px dashed black;
   text-align: center;
   line-height: 350px;

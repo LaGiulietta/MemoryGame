@@ -44,7 +44,8 @@ window.onload = function(){
             }
     	};
     
-    document.getElementById('close5').onclick = function(){
+
+    document.getElementById('close5').onclick = function (){
         
             document.getElementById("boxAbout").style.display="none";
             document.getElementById("boxHelp").style.display="none";
@@ -83,6 +84,7 @@ window.onload = function(){
         clearDiv();
         myStartAfterSettingsFunction();
     };
+
 
     fillCanvas();
 
