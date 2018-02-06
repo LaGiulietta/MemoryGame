@@ -1,7 +1,10 @@
 var set=[];
-var partita=false; // per decidere come gestire la pressione del tasto "Escape"	
-var settaggio=false;
+var partita=false; // booleano per decidere come gestire la pressione del tasto "Escape"	
+var settaggio=false; // booleano per decidere come gestire la pressione del tasto "Invio"	
 
+var background="images/rainbow01.jpg";
+
+// Funzioni per mostrare o nascondere il div ricevuto per parametro
 function mostra(idElem){ 
 	idElem.style.display='block'; 
 } 
@@ -15,6 +18,12 @@ function nascondi(idElem){
 } 
 
 
+// disattivare le animazioni
+function stopAnimations(idElem){
+	idElem.style.animation="none";
+}
+
+// disabilitazione dei bottoni sottostanti
 function disableAllButtonAbove(){
 	var start = document.getElementById('sb');
 	start.disabled=true;
@@ -24,10 +33,7 @@ function disableAllButtonAbove(){
 	help.disabled=true;
 }
 
-function stopAnimations(idElem){
-	idElem.style.animation="none";
-}
-
+// abilitazione dei bottoni sottostanti
 function enableAllButtonAbove(){
 	var start = document.getElementById('sb');
 	start.disabled=false;
@@ -93,20 +99,20 @@ function myStartAfterSettingsFunction() {
 	mostra(box);
 	difficulty();
 
-	//var text=document.getElementById('via');
-	//mostra(text);
-	// PRENDO IL TEMPO INIZIALE
-	var startTime = new Date();
+	var startTime = new Date(); // memorizzo il tempo iniziale
 	console.log("START:" + startTime);
 
 	console.log("Initial array: "+ array.toString());
 	var numCouple=array.length/2;
+
+	// GIOCO
 	game(startTime);
 	
-	//console.log("Exit array: "+ array.toString());
 }
 
 
+
+// Si vede quale mazzo è stato selezionato dall'utente e si preleva il set di carte
 function viewSetCards(){
 	if (document.getElementById('animals').checked){
 		deck=0;
@@ -131,6 +137,9 @@ function viewSetCards(){
 	return basePath;
 }
 
+// Si crea l'array cardsImages della dimensione del mazzo associata alla difficoltà 
+// estraendo le carte da set in maniera random (almeno variano nel corso delle diverse partite)
+	
 function addImages(numElements, basePath){
 	
 	var cardsImages = [];
@@ -147,9 +156,9 @@ function addImages(numElements, basePath){
 	    cardsImages.push(image);
 	    //document.getElementById('table').appendChild(image);
 	    console.log("Number of elements:" + set.length );
-	    console.log("Number of cards images:" + cardsImages.length);
-	    
+	    console.log("Number of cards images:" + cardsImages.length);	    
     }
+    // controllo dalla console le carte estratte
     console.log("CARDS;");
     for (i=0; i<cardsImages.length;i++){
     	console.log(cardsImages[i].src);
@@ -157,21 +166,23 @@ function addImages(numElements, basePath){
 	return cardsImages;
 }
 
-/// GAME FUNCTIONS
+
+///* GAME FUNCTIONS *///
 
 var array=[];
-var background="images/rainbow01.jpg";
-var diff=-1;
-var deck=-1;
+var diff=-1; // per vedere la difficoltà settata
+var deck=-1; // per vedere il tipo di mazzo scelto
 
+// Funzione cardine del gioco, vedo cos'è stato settato dall'utente ed imposto il gioco
 function difficulty(){
-	viewSetCards();
-		
+	// Vedo quale mazzo prendere
+	//viewSetCards();
+	// Vedo quale difficoltà è stata impostata (FIXME: crea una funzione ad hoc)
 	if (document.getElementById('easy').checked) {
 		var cards=6;
 		diff=0;
 		rate_value = document.getElementById('easy').id;
-		// Preparo le carte
+		// Preparo la griglia
 		my_3x4();
 		var path=viewSetCards();
 		// Ottengo l'insieme di carte da usare (6)
@@ -201,12 +212,10 @@ function difficulty(){
 		array=matchCardsWithId(setImages, 5);
 	}
 	
-	// Restituisco l'array di cards*2 elementi con contenuto l'URL della relativa immagine associata all'elemento di indice .. Indice va da 0 a cards*2-1
-	//console.log("MATCH:" + array.toString());
-
 }
 
 
+// svuoto e rimuovo il div table (ad ogni partita viene ricreato)
 function clearDiv(){
 	var div = document.getElementById('table');
 	while(div.firstChild)
@@ -214,6 +223,7 @@ function clearDiv(){
 }
 
 
+// associo le carte in modo casuale
 function matchCardsWithId(setImages, n){
 	var element = document.getElementById("table");
 	var numElements= element.childElementCount-n;
@@ -234,30 +244,14 @@ function matchCardsWithId(setImages, n){
 
 		// Genero un numero/indice random
 		var ranNum1 = Math.floor(Math.random() * arrId.length);
-		//console.log("numero random1 tra 0 e "+ arrId.lenght + " vale " + ranNum1);
-
 		var index=arrId[ranNum1];
-		//var el1= document.getElementById(arrId[ranNum1]);
 		matched[index]=img;
-	    //console.log(index);
-	    //el1.src=img;
-	 	
-	    //el1.alt="ehmmm";
 	    arrId.splice(ranNum1, 1);
+
 		// Genero un altro numero/indice random
-		var ranNum2 = Math.floor(Math.random() * arrId.length);
-		//console.log("numero random1 tra 0 e "+arrId.lenght + " vale " + ranNum2);
-
-
-		
+		var ranNum2 = Math.floor(Math.random() * arrId.length);	
 		var index2=arrId[ranNum2];
-		//var el2= document.getElementById(arrId[ranNum2]);
 		matched[index2]=img;
-	    //console.log(index);
-
-	    //el2.src=img;
-	  
-	    //el2.alt="ehmmm";
 	    arrId.splice(ranNum2, 1);	 
 
 	    console.log("------")   
@@ -266,7 +260,7 @@ function matchCardsWithId(setImages, n){
 	return matched;
 }
 
-
+/**
 function showImages(){
 	var element = document.getElementById("table");
 	var numElements= element.childElementCount-3;
@@ -279,11 +273,12 @@ function showImages(){
 
 	}
 }
+**/
 
-var first=true;
-var idFirst=-1;
-var idSecond=-1;
-var numCouple=-1;
+var first=true;		// se è la prima la lascio girata
+var idFirst=-1; 	// id prima carta girata
+var idSecond=-1;	// id seconda carta girata
+var numCouple=-1; 	
 var canTurn=0; // 0: posso girare, 1: girata una carta, 2: girate due carte
 
 
@@ -424,7 +419,7 @@ function timeConversion(endTime, startTime) {
     	dm=60-(sm-em);
     }
     console.log("dm:"+dm+"ds:"+ds);
-
+    stars=-1;
 
     switch(diff) {
     case 0:

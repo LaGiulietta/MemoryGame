@@ -8,4 +8,4 @@ function showOptionsButton() {
   document.getElementById("about").style.visibility = "visible";
 }
 // adjust this as needed, 1 sec = 1000
-setTimeout("showOptionsButton()", 5000);
+setTimeout("showOptionsButton()", 5500);
